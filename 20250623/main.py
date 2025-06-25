@@ -15,6 +15,16 @@ CREATE TABLE IF NOT EXISTS PERSONA (
 );
 ''')
 
+# class Persona:
+#     def __init__(self, cuil, nombre, calle, numero, comuna, ciudad, pepito):
+#         self.cuil = cuil
+#         self.nombre = nombre
+#         self.calle = calle
+#         self.numero = numero
+#         self.comuna = comuna
+#         self.ciudad = ciudad
+#         self.pepito = pepito
+
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS CLIENTE (
     CUIL INTEGER PRIMARY KEY,
@@ -95,6 +105,22 @@ CREATE TABLE IF NOT EXISTS TELEFONO (
     FOREIGN KEY(CLI_CUIL) REFERENCES CLIENTE(CUIL)     
 );
 ''')
+
+# cursor.execute('''
+# ALTER TABLE PERSONA ADD COLUMN SUSCRIPTO INTEGER;
+# ''')
+
+# cursor.execute('''
+# ALTER TABLE PERSONA ADD COLUMN SUSCRIPTO_2 INTEGER CHECK (SUSCRIPTO_2 IN (0, 1));
+# ''')
+
+# cursor.execute('''
+# ALTER TABLE PERSONA DROP COLUMN SUSCRIPTO;
+# ''')
+
+# cursor.execute('''
+# ALTER TABLE PERSONA RENAME COLUMN SUSCRIPTO_2 TO SUSCRIPTO;
+# ''')
 
 conn.commit()
 conn.close()
