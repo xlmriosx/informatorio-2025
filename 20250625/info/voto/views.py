@@ -3,11 +3,11 @@ from django.http import HttpResponse, Http404
 # Create your views here.
 from .models import Pregunta
 
-def index(request):
+def preguntas(request):
     # return HttpResponse("Hola mundo desde voto")
     list_preguntas = Pregunta.objects.order_by("-publicado_en")
     context = {"list_preguntas": list_preguntas}
-    return render(request, "index.html", context)
+    return render(request, "preguntas.html", context)
 
 def detalle(request, pregunta_id):
     try:

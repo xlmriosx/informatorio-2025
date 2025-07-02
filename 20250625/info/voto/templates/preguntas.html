@@ -1,3 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Preguntas{% endblock %}
+
+{% block content%}
 {% if list_preguntas %}
 <ul>
     {% for pregunta in list_preguntas %}
@@ -9,3 +15,4 @@
 {% else %}
     <p>No existen preguntas...</p>
 {% endif %}
+{% endblock %}
